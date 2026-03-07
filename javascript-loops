@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loops</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Loops</h1>
+        <p>Click buttons to see different loop types</p>
+
+        <div class="buttons">
+            <button onclick="forLoop()">for</button>
+            <button onclick="whileLoop()">while</button>
+            <button onclick="doWhileLoop()">do...while</button>
+            <button onclick="forInLoop()">for...in</button>
+            <button onclick="forOfLoop()">for...of</button>
+            <button onclick="breakExample()">break</button>
+            <button onclick="continueExample()">continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

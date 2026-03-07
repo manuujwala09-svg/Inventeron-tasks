@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with Captcha</title>
+</head>
+<body>
+
+<form id="myForm">
+
+    <!-- First two fields -->
+    <input type="text" placeholder="First Name" required><br><br>
+    <input type="text" placeholder="Last Name" required><br><br>
+
+    <!-- Captcha text -->
+    <p id="captchaText" style="display:none;"></p>
+
+    <!-- Captcha input -->
+    <input type="text" id="captchaInput" placeholder="Enter Captcha" style="display:none;"><br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+
+let firstSubmit = false;
+let captcha = "";
+
+document.getElementById("myForm").addEventListener("submit", function(event) {
+
+    event.preventDefault(); // stop page reload
+
+    if (firstSubmit == false) {
+
+        // Generate simple captcha number
+        captcha = Math.floor(Math.random() * 1000);
+
+        document.getElementById("captchaText").innerText = "Captcha: " + captcha;
+        document.getElementById("captchaText").style.display = "block";
+        document.getElementById("captchaInput").style.display = "block";
+
+        firstSubmit = true;
+
+    } else {
+
+        let userValue = document.getElementById("captchaInput").value;
+
+        if (userValue == captcha) {
+            alert("Submitted successfully");
+        } else {
+            alert("Invalid captcha");
+        }
+    }
+
+});
+
+</script>
+
+</body>
+</html>
